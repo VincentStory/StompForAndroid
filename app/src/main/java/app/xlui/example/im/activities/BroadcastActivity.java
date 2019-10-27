@@ -63,9 +63,6 @@ public class BroadcastActivity extends AppCompatActivity {
         broadcastButton.setOnClickListener(l -> {
             stompClient = Stomp.over(OKHTTP, Const.address);
 
-            StompUtils.lifecycle(stompClient);
-
-
             stompClient.lifecycle().subscribe(lifecycleEvent -> {
                 //关注lifecycleEvent的回调来决定是否重连
                 switch (lifecycleEvent.getType()) {

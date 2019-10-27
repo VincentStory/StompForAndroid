@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Im</string>
+
+    <string name="broadcast">Broadcast</string>
+    <string name="groups">Groups</string>
+    <string name="chat">Chat</string>
+
+    <string name="broadcast_prompt">Please input you name:</string>
+    <string name="send">Send</string>
+
+    <string name="group_prompt">Please input the group id:</string>
+    <string name="confirm">Confirm</string>
+
+    <string name="id_prompt">Please input you id:</string>
+    <string name="chat_user_id">Please input chat user id:</string>
+    <string name="chat_message">Please input chat message</string>
+</resources>

@@ -83,6 +83,16 @@ dependencies {
 ```
   stompClient.send(Const.broadcast).subscribe();
 ```
+
+6.设置全局异常监听(如果不设置，连接出现异常时会出现The exception was not handled due to missing onError，并闪退)
+```
+   RxJavaPlugins.setErrorHandler(new Consumer<Throwable>() {
+            @Override
+            public void accept(Throwable throwable) throws Exception {
+                L.i("throwable==", throwable.getMessage());
+            }
+        });
+```
 -----------------------完成--------------------
 
 有遇到其他问题可以加我qq进行沟通

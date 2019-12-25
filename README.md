@@ -5,14 +5,14 @@
 
 # 使用方法
 
-1.引入类库
+## 1.引入类库
 ```
 dependencies {
     api "com.github.NaikSoftware:StompProtocolAndroid:1.6.4"
     api "io.reactivex.rxjava2:rxjava:2.2.5"
 }
 ```
-2.初始化stompClien对象 并监听连接状态
+## 2.初始化stompClien对象 并监听连接状态
 ```
  stompClient = Stomp.over(OKHTTP, Const.address);
 
@@ -36,7 +36,7 @@ dependencies {
             
 ```
 
-3.发起连接 headers信息根据具体情况填入
+## 3.发起连接 headers信息根据具体情况填入
 ```
  ArrayList<StompHeader> headers = new ArrayList<>();
             headers.add(new StompHeader("userId", "103"));
@@ -46,7 +46,7 @@ dependencies {
 
 ```
 
-4.发起订阅信息
+## 4.发起订阅信息
 ```
 
             stompClient.topic(Const.broadcastResponse)
@@ -78,13 +78,13 @@ dependencies {
                     });
 
 ```
-5.发送消息 由相对应的订阅渠道返回信息
+## 5.发送消息 由相对应的订阅渠道返回信息
 
 ```
   stompClient.send(Const.broadcast).subscribe();
 ```
 
-6.设置全局异常监听(如果不设置，连接出现异常时会出现The exception was not handled due to missing onError，并闪退)
+## 6.设置全局异常监听(如果不设置，连接出现异常时会出现The exception was not handled due to missing onError，并闪退)
 ```
    RxJavaPlugins.setErrorHandler(new Consumer<Throwable>() {
             @Override

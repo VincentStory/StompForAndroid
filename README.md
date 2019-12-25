@@ -12,7 +12,7 @@ dependencies {
     api "io.reactivex.rxjava2:rxjava:2.2.5"
 }
 ```
-## 2.初始化stompClien对象 并监听连接状态
+## 2.初始化stompClient对象 并监听连接状态
 ```
  stompClient = Stomp.over(OKHTTP, Const.address);
 

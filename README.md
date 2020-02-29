@@ -83,8 +83,41 @@ dependencies {
 ```
   stompClient.send(Const.broadcast).subscribe();
 ```
+## 6.如果需要取消订阅，可以通过这种方式
 
-## 6.设置全局异常监听(如果不设置，连接出现异常时会出现The exception was not handled due to missing onError，并闪退)
+```
+ private CompositeDisposable compositeDisposable;
+
+ private void resetSubscriptions() {
+        if (compositeDisposable != null) {
+            compositeDisposable.dispose();
+        }
+        compositeDisposable = new CompositeDisposable();
+    }
+
+ public void topicData() {
+    resetSubscriptions();
+    Disposable dispTopic =  stompClient.topic(address)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(stompMessage -> {
+                    Log.i(TAG, stompMessage.getPayload());
+                }, throwable -> {
+                    Log.e(TAG, "Error on subscribe topic", throwable);
+                });
+     compositeDisposable.add(dispTopic);
+
+    }
+
+//取消订阅
+public void unSubcribe() {
+        compositeDisposable.dispose();
+}
+
+
+```
+
+## 7.设置全局异常监听(如果不设置，连接出现异常时会出现The exception was not handled due to missing onError，并闪退)
 ```
    RxJavaPlugins.setErrorHandler(new Consumer<Throwable>() {
             @Override

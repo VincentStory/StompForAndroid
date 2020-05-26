@@ -13,21 +13,14 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
 
 import app.xlui.example.im.R;
 import app.xlui.example.im.conf.Const;
-import app.xlui.example.im.util.StompUtils;
 import io.reactivex.subscribers.DisposableSubscriber;
-import okhttp3.OkHttpClient;
 import ua.naiksoftware.stomp.Stomp;
 import ua.naiksoftware.stomp.StompClient;
-import ua.naiksoftware.stomp.dto.StompCommand;
 import ua.naiksoftware.stomp.dto.StompHeader;
 import ua.naiksoftware.stomp.dto.StompMessage;
-import ua.naiksoftware.stomp.provider.OkHttpConnectionProvider;
 
 import static ua.naiksoftware.stomp.Stomp.ConnectionProvider.OKHTTP;
 

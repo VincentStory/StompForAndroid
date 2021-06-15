@@ -2,6 +2,7 @@
 依赖StompProtocolAndroid类库，引入项目使用
 
 * 本文参考 https://github.com/NaikSoftware/StompProtocolAndroid
+* 简书文章链接：https://www.jianshu.com/p/a60865393239
 
 # 使用方法
 

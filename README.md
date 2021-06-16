@@ -3,6 +3,7 @@
 
 * 本文参考 https://github.com/NaikSoftware/StompProtocolAndroid
 * 简书文章链接：https://www.jianshu.com/p/a60865393239
+* 如果需要绘制k线可以参考一下我另外一个Project：https://github.com/VincentStory/KLineChartView
 
 # 使用方法
 
